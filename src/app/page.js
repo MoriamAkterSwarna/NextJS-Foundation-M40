@@ -1,16 +1,28 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import styles from "../components/Home.module.css";
+
 export default function Home() {
   return (
    
     <>
 
-      <h1>This is Home page </h1>
+      <div className={styles.container}>
+        <h1>This is Home page </h1>
+      <p className={styles.description}>lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
 
       <br />
+      
 
-      <Link href="/about">
+      <ul className="flex *:mr-3 text-amber-500 *:hover:text-amber-700 *:hover:underline">
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+
+      {/* <Link href="/about">
         <button className="btn">Go to About</button>
       </Link> 
       <br />
@@ -29,7 +41,7 @@ export default function Home() {
       <br />
       <Link href="/contact/contactForm">
         <button className="btn">Contact Form</button>
-      </Link>
+      </Link> */}
     
     </>
   );
