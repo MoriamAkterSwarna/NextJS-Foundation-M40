@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 const BlogDetails = async ({ params }) => {
   const { id } = await params;
   console.log(id);
@@ -21,6 +23,10 @@ const BlogDetails = async ({ params }) => {
   ];
 
   const blog = blogs.find((b) => b.id == id);
+
+  if (!blog) {
+    notFound();
+  }
 
   return (
     <div>
